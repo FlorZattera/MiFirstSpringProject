@@ -8,6 +8,7 @@ public class MyFirstSpringProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyFirstSpringProjectApplication.class, args);
+		//server.port=8081 para sobreescribir el puerto de sql
 	}
 
 }

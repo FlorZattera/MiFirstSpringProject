@@ -1,4 +1,5 @@
 package org.ada.myfirstspringproject.controller;
+
 import org.ada.myfirstspringproject.dto.PersonDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +11,13 @@ public class PersonController {
 
     @PostMapping //etiqueta para request de modulo POST (creación)
     public ResponseEntity create(@RequestHeader(value = "client-id") String clientID,
-                                 //devuelve status HTTP, (request header → ahora es mandatorio en postman agregarlo)
-                                 @RequestBody PersonDTO persondto){
+                                 @RequestHeader(value = "user-id") String userID,
+                                 @RequestBody PersonDTO personDTO) {
+        //devuelve status HTTP, (request header → ahora es mandatorio en postman agregarlo)
 
-        return new ResponseEntity(HttpStatus.CREATED);
-}
+        return new ResponseEntity(HttpStatus.CREATED); //201, se creó
+    }
+
+
 
 }

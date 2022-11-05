@@ -2,22 +2,20 @@ package org.ada.myfirstspringproject.dto;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
-public class PersonDTO {
-
+public class PersonDTO { //DTO Data Transfer Object: clases de información
     private String id;
     private String name;
-
-    @JsonAlias ("last_name")
-    private String lastname;
-    private String birthday;
+    @JsonAlias("last_name") //como en JSON es last_name, uso librería
+    private String lastName;
+    private String birthday; //dd-mm-aa
     private char gender;
-    @JsonAlias ("civil_status")
+    @JsonAlias("civil_status")
     private String civilStatus;
 
-    public PersonDTO(String id, String name, String lastname, String birthday, char gender, String civilStatus) {
+    public PersonDTO(String id, String name, String lastName, String birthday, char gender, String civilStatus) {
         this.id = id;
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.birthday = birthday;
         this.gender = gender;
         this.civilStatus = civilStatus;
@@ -31,8 +29,8 @@ public class PersonDTO {
         return name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getBirthday() {
